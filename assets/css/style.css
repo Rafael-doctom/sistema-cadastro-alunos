@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-width: 100%;
+    max-height: 50vh;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover{
+    transition: 1s;
+    color: #000;
+    transform: scale(1.1);
+}
+
+.init {
+    text-align: center;
+    padding: 15px;
+    font-family: monospace;
+    background: rgb(255, 153, 0);
+}
+
+.info {
+    margin: 40px;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+
+}
+
+.info form {
+    display: flex;
+    text-align: center;
+    font-family: sans-serif;
+    gap: 10px;
+}
+
+.info input {
+    width: 50%;
+    border-radius: 4px;
+    border: 1px solid rgb(90, 89, 89);
+}
+
+.Adiciona {
+    padding: 4px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: rgb(90, 89, 89);
+    background: rgb(255, 153, 0);
+}
+
+.info button {
+    padding: 4px 12px;
+}
+
+.info button:hover {
+    transition: 1s;
+    color: #000;
+}
+
+.table {
+    margin: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    flex-direction: column;
+    text-align: center;
+}
+
+.row-table {
+    background: rgb(255, 153, 0);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.body-table td {
+    margin-top: 20px;
+    border: 1px solid #000;
+}
+
+
+.button-delete {
+    border: none;
+    background: rgb(255, 153, 0);
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-delete:hover {
+    transition: 0.6s;
+    background: #000;
+    color: #fff;
+}
+
+.nota-sucess {
+    background: #14cd458e;
+    color: #fff;
+}
+
+.nota-error {
+    background: rgba(240, 32, 32, 0.418)
+}
+
+.end {
+    margin-top: 400px;
+    padding: 40px;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+    background: rgb(255, 133, 0);
+    justify-content: center;
+}
+
+
+@media(max-width: 768px){
+    .info input{
+       width: 80%;
+    }
+
+    .table{
+       padding: 20px;
+       display: flex;
+       flex-direction: column;
+       gap: 20px;
+    }
+
+    .table th{
+        margin-left: 20px;
+    }
+
+    .table td{
+    padding: 8px;
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <title>Cadastro Alunos</title>
+  </head>
+
+  <body>
+    <header class="init">
+      <h1>Cadastro de Alunos</h1>
+    </header>
+    <section class="info">
+      <form>
+        <label for="name"
+          >Nome <input type="text" required id="name" class="name"
+        /></label>
+        <label for="idade"
+          >Idade <input type="number" required id="idade" class="idade"
+        /></label>
+        <label for="nota"
+          >Nota <input type="number" required class="nota" id="nota"
+        /></label>
+        <button type="submit" class="Adiciona">Cadastrar Aluno</button>
+      </form>
+    </section>
+    <span class="erro"></span>
+
+    <section class="table">
+      <table>
+        <thead>
+          <tr class="row-table">
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Nota</th>
+            <th>Cod/Aluno</th>
+          </tr>
+        </thead>
+        <tbody class="body-table">
+        </tbody>
+      </table>
+    </section>
+    <footer class="end">
+      <div>
+        <p> Desenvolvido por <a href="mailto:felipegabfd@gmail.com"> @Felipe Gabriel </a></p>
+        <p>  2022  <i> &copy;</p> 
+      </div>
+     
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
