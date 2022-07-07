@@ -1,12 +1,12 @@
 const nome = document.querySelector(".name");
 const Idade = document.querySelector(".idade");
 const nota = document.querySelector(".nota");
-const nomeMateria = document.querySelector('.materia')
 let botao = document.querySelector(".Adiciona");
 
 function AdicionaAluno() {
+
   botao.addEventListener("click", (e) => {
-    e.preventDefault();
+    e.preventDefault(e);
 
 
     if (nome.value === "" && typeof nome !== "string") {
@@ -28,11 +28,23 @@ function AdicionaAluno() {
     let tdButton = document.createElement("button");
 
 
-    tdNome.textContent = nome.value;
-    tdIdade.textContent = Idade.value;
-    tdNota.textContent = nota.value;
+    armazenaAlunos()
+  
+
+    let aluno = localStorage.getItem('Aluno');
+    let alunos = JSON.parse(aluno)
+    let alunosNome = alunos.nome;
+    let alunosIdade = alunos.idade;
+    let alunosNota = alunos.nota;
+
+    console.log(alunosNome)
+
+    tdNome.textContent = alunosNome;
+    tdIdade.textContent = alunosIdade;
+    tdNota.textContent =  alunosNota;
     tdCodigo.textContent = geraCodigoAluno(31000, 32999); 
-    tdButton.textContent = 'Deletar'
+    tdButton.textContent = 'Deletar';
+
     const table = document.createElement("tr");
 
     table.appendChild(tdNome);
@@ -41,8 +53,6 @@ function AdicionaAluno() {
     table.appendChild(tdCodigo);
     table.appendChild(tdButton);
  
-
-
     if(nota.value >= 60){
       tdNota.classList.add('nota-sucess')
     }else if(nota.value < 60){
@@ -54,9 +64,10 @@ function AdicionaAluno() {
       const confirma = confirm(' Voce realmente deseja remover este Aluno?')
 
       if(confirma === true){
+        sessionStorage.removeItem('Aluno')
        table.remove();
       }else{
-        return;
+        return false;
       }
     })
 
@@ -67,17 +78,30 @@ function AdicionaAluno() {
     })
 
     const tb = document.querySelector(".body-table");
-    tb.appendChild(table);
-    return tb;
+    tb.appendChild(table);    
   });
 }
+
+
 
 function geraCodigoAluno(min, max) {
   const geraCodigo = Math.floor(Math.random() * (max - min) + min);
   return geraCodigo;
 }
 
+function armazenaAlunos(){
+  let Armazena = {
+    nome: nome.value,
+    idade: Idade.value,
+    nota: nota.value
+  }
+  localStorage.setItem('Aluno' , JSON.stringify(Armazena));
+ 
+}
+
 AdicionaAluno();
+
+
 
 
 
