@@ -70,7 +70,7 @@ function AdicionaAluno() {
     })
 
     const tb = document.querySelector(".body-table");
-    tb.appendChild(table);    
+    tb.appendChild(table)
   });
 }
 
