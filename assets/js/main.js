@@ -1,4 +1,5 @@
 const nome = document.querySelector(".name");
+const erro = document.querySelector('.erro')
 const Idade = document.querySelector(".idade");
 const nota = document.querySelector(".nota");
 let botao = document.querySelector(".Adiciona");
@@ -10,15 +11,11 @@ function AdicionaAluno() {
 
 
     if (nome.value === "" && typeof nome !== "string") {
-      return alert(" Insira um nome valido ");
-    }
-
-    if (Idade.value.length === 0) {
-      return alert(" Insira uma idade valida ");
-    }
-
-    if ( nota.value > 100 || nota.value === '') {
-      return alert(" Insira uma nota entre 0 e 100");
+       return alert('Informe um nome')
+    } else if (Idade.value.length === 0) {
+      return alert('Insira uma idade válida ou maior que 0')
+    }else if ( nota.value > 100 || nota.value === '' || nota.value <= 0) {
+      return alert(' Insira uma nota entre 0 e 100')
     }
 
     let tdNome = document.createElement("td");
@@ -27,17 +24,13 @@ function AdicionaAluno() {
     let tdCodigo = document.createElement("td");
     let tdButton = document.createElement("button");
 
-
     armazenaAlunos()
   
-
     let aluno = localStorage.getItem('Aluno');
     let alunos = JSON.parse(aluno)
     let alunosNome = alunos.nome;
     let alunosIdade = alunos.idade;
     let alunosNota = alunos.nota;
-
-    console.log(alunosNome)
 
     tdNome.textContent = alunosNome;
     tdIdade.textContent = alunosIdade;
@@ -71,7 +64,6 @@ function AdicionaAluno() {
       }
     })
 
-
     tdNome.addEventListener('dblclick',(e) => {
        let novoNome = prompt(' Insira o nome que voçê deseja alterar ');
        tdNome.textContent = novoNome;
@@ -81,8 +73,6 @@ function AdicionaAluno() {
     tb.appendChild(table);    
   });
 }
-
-
 
 function geraCodigoAluno(min, max) {
   const geraCodigo = Math.floor(Math.random() * (max - min) + min);
@@ -96,7 +86,6 @@ function armazenaAlunos(){
     nota: nota.value
   }
   localStorage.setItem('Aluno' , JSON.stringify(Armazena));
- 
 }
 
 AdicionaAluno();

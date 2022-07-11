@@ -9,47 +9,68 @@
   </head>
 
   <body>
-    <header class="init">
-      <h1>Cadastro de Alunos</h1>
-    </header>
-    <section class="info">
-      <form>
-        <label for="name"
-          >Nome <input type="text" required id="name" class="name"
-        /></label>
-        <label for="idade"
-          >Idade <input type="number" required id="idade" class="idade"
-        /></label>
-        <label for="nota"
-          >Nota <input type="number" required class="nota" id="nota"
-        /></label>
-        <button type="submit" class="Adiciona">Cadastrar Aluno</button>
-      </form>
-    </section>
-    <span class="erro"></span>
-
-    <section class="table">
-      <table>
-        <thead>
-          <tr class="row-table">
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>Nota</th>
-            <th>Cod/Aluno</th>
-          </tr>
-        </thead>
-        <tbody class="body-table">
-        </tbody>
-      </table>
-    </section>
+    <main class="document">
+      <header class="init">
+        <h1>Cadastro de Alunos</h1>
+        <label class="theme" for="dark"> 
+              <i text="alterar tema" class="fa-solid fa-arrow-right-arrow-left"></i>
+          <input type="checkbox" name="dark" id="dark" class="check"/>
+        </label>
+      </header>
+      <section class="info">
+        <form>
+          <label for="name"
+            >Nome <input type="text" required id="name" class="name"
+          /> 
+        </label>
+          
   
-    <footer class="end">
-      <div>
-        <p> Desenvolvido por <a href="mailto:felipegabfd@gmail.com"> @Felipe Gabriel </a></p>
-        <p>  2022  <i> &copy;</p> 
-      </div>
-     
-    </footer>
+          <label for="idade"
+            >Idade <input type="number" required id="idade" class="idade" min="1"
+          />
+        </label>
+       
+  
+          <label for="nota"
+            >Nota <input type="number" required class="nota" id="nota" min="0"
+          />
+       
+        </label>
+        
+  
+          <button class="Adiciona">Cadastrar Aluno</button>
+        </form>
+  
+      </section>
+      <section class="error">
+        <span class="erro"></span>
+      </section>
+  
+      <section class="table">
+        <table>
+          <thead>
+            <tr class="row-table">
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Nota</th>
+              <th>Cod/Aluno</th>
+            </tr>
+          </thead>
+          <tbody class="body-table">
+          </tbody>
+        </table>
+      </section>
+    
+      <footer class="end">
+        <div>
+          <p> Desenvolvido por <a href="mailto:felipegabfd@gmail.com"> @Felipe Gabriel </a></p>
+          <p>  2022  <i> &copy;</p> 
+        </div>
+       
+      </footer>
+    </main>
+    <script src="https://kit.fontawesome.com/996eb60dc7.js" crossorigin="anonymous"></script>
+    <script src="assets/js/AlteraTema.js" ></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
