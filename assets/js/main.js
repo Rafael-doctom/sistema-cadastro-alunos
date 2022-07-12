@@ -11,11 +11,13 @@ function AdicionaAluno() {
 
 
     if (nome.value === "" && typeof nome !== "string") {
-       return alert('Informe um nome')
+       return erro.innerHTML = ('Informe um nome')
     } else if (Idade.value.length === 0) {
-      return alert('Insira uma idade válida ou maior que 0')
+      return erro.innerHTML = ('Insira uma idade válida')
     }else if ( nota.value > 100 || nota.value === '' || nota.value <= 0) {
-      return alert(' Insira uma nota entre 0 e 100')
+      return erro.innerHTML = ('Insira uma nota entre 0 e 100')
+    }else{
+      erro.innerHTML = ''
     }
 
     let tdNome = document.createElement("td");

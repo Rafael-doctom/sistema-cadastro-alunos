@@ -37,6 +37,13 @@ a:hover{
     background: rgb(255, 153, 0);
 }
 
+.busca{
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 1px 1.3px 3px #000;
+}
+
 .init button{
     cursor: pointer;
     border: none;
@@ -170,6 +177,10 @@ a:hover{
     align-items: center;
     background: rgb(255, 133, 0);
     justify-content: center;
+}
+
+.invisible{
+    display: none;
 }
 
 @media(max-width: 768px){
