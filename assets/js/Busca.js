@@ -4,14 +4,14 @@ function Busca(){
   busca.addEventListener('input',() => {
     console.log(busca.value);
 
-    let alunos = document.querySelectorAll('.name')
+    let alunos = document.querySelectorAll('tr')
 
     if(busca.value > 0){
       for(let i = 0 ; i < alunos.value.length ; i ++){
         let aluno = alunos[i]
-        let nomeAluno = aluno.querySelector('.name')
+        let nomeAluno = aluno.querySelector('td')
         let nome = nomeAluno.textContent;
-        if(nome != this.value){
+        if(nome != busca.value){
           nome.style.display = 'none'
         }else{
           nome.style.display = 'block'
