@@ -20,6 +20,7 @@ function AdicionaAluno() {
 function criaTabela() {
 
   let tdNome = document.createElement("td");
+  tdNome.classList.add('aluno-nome')
   let tdIdade = document.createElement("td");
   let tdNota = document.createElement("td");
   let tdCodigo = document.createElement("td");
@@ -32,7 +33,7 @@ function criaTabela() {
   tdButton.innerHTML = 'Deletar';
 
   const table = document.createElement("tr");
-
+  table.classList.add('aluno')
   table.appendChild(tdNome);
   table.appendChild(tdIdade);
   table.appendChild(tdNota);
@@ -80,8 +81,11 @@ function ValidaAluno() {
     return erro.innerHTML = ('Insira uma nota entre 0 e 100')
   } else {
     erro.innerHTML = ''
+    criaTabela()
   }
-  criaTabela()
+  nome.value = ''
+  Idade.value = ''
+  nota.value = ''
 }
 
 const armazena = () => {

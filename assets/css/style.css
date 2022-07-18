@@ -168,6 +168,17 @@ a:hover{
     background: rgba(240, 14, 14, 0.418)
 }
 
+.options p{
+    text-align: center;
+    display: flex;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 8px 11.5px;
+    border-radius: 80%; 
+    justify-content: flex-end;
+    font-size: 18px;
+}
+
 .end {
     margin-top: 600px;
     padding: 50px;
@@ -180,7 +191,7 @@ a:hover{
 }
 
 .invisible{
-    display: none ;
+  display: none;
 }
 
 @media(max-width: 768px){
