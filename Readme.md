@@ -1,6 +1,13 @@
-# SISTEMA DE CADATRO
+# SISTEMA DE CADASTRO DE ALUNOS
 
-## Em desenvolvimento .. 
 
-### Onde foi implementado a opção de deletar o aluno 
-### edita o aluno clicando 2 vezes sobre o nome
+ - Consiste em um sistema onde é possivel adicionar , alterar e deletar o aluno (CRUD)
+ 
+ 
+ ### FUNCIONALIDADES 
+ 
+  - tema claro e escuro
+  - gera um código exclusivo para cada aluno 
+  - buscar aluno adicionado na tabela
+  - demonstração de alunos que obtiveram media maior ou igual a 60 
+  - demonstração de alunos reprovados 
