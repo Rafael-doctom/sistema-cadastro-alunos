@@ -11,3 +11,4 @@
   - buscar aluno adicionado na tabela
   - demonstração de alunos que obtiveram media maior ou igual a 60 
   - demonstração de alunos reprovados 
+  - correção de responsividade
