@@ -1,26 +1,23 @@
+
 let nome = document.querySelector(".name");
 const erro = document.querySelector('.erro')
 let Idade = document.querySelector(".idade");
 let nota = document.querySelector(".nota");
 let botao = document.querySelector(".Adiciona");
-const alunos = (localStorage.getItem('Aluno')) || [];
-console.log(alunos)
-
-
+const alunos = JSON.parse(localStorage.getItem('Aluno')) || [];
 AdicionaAluno();
 
 function AdicionaAluno() {
   botao.addEventListener("click", (e) => {
     e.preventDefault();
-    ValidaAluno()
-    armazena()
-  });
+    ValidaAluno();
+    armazena();
+})
 }
 
 function criaTabela() {
 
   let tdNome = document.createElement("td");
-  tdNome.classList.add('aluno-nome')
   let tdIdade = document.createElement("td");
   let tdNota = document.createElement("td");
   let tdCodigo = document.createElement("td");
@@ -30,7 +27,13 @@ function criaTabela() {
   tdIdade.innerHTML = Idade.value;
   tdNota.innerHTML = nota.value;
   tdCodigo.innerHTML = geraCodigoAluno(1000, 9999);
-  tdButton.innerHTML = 'Deletar';
+  tdButton.innerHTML = 'X';
+
+  tdButton.style.fontWeight = 'bold'
+
+  tdNome.classList.add('aluno-nome')
+  tdIdade.classList.add('aluno-idade')
+  tdNota.classList.add('aluno-nota')
 
   const table = document.createElement("tr");
   table.classList.add('aluno')
@@ -64,12 +67,13 @@ function criaTabela() {
   })
   const tb = document.querySelector(".body-table");
   tb.appendChild(table)
-  return tb
+ 
 }
 
 function geraCodigoAluno(min, max) {
   const geraCodigo = Math.floor(Math.random() * (max - min) + min);
   return geraCodigo;
+  
 }
 
 function ValidaAluno() {
@@ -83,18 +87,21 @@ function ValidaAluno() {
     erro.innerHTML = ''
     criaTabela()
   }
-  nome.value = ''
-  Idade.value = ''
-  nota.value = ''
 }
 
-const armazena = () => {
-  let armazena = {
+function armazena(){
+
+  const armazena = {
     nome: nome.value,
     idade: Idade.value,
-    nota: nota.value,
+    nota: nota.value
   }
-  localStorage.setItem('Aluno' , JSON.stringify(armazena))
+  if(armazena === ' ' || armazena === undefined){
+    return false;
+  }else{
+    alunos.push(armazena)
+    localStorage.setItem('Aluno' , JSON.stringify(alunos))
+  }
 
 }
 

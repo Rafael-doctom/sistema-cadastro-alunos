@@ -33,15 +33,16 @@ a:hover{
     justify-content: space-around;
     text-align: center;
     padding: 15px;
+    gap: 10px;
     font-family: monospace;
     background: rgb(255, 153, 0);
 }
 
 .busca{
-    padding: 6px;
+    padding: 5px;
     border: none;
     border-radius: 4px;
-    box-shadow: 1px 1.3px 3px #000;
+    box-shadow: 1px 1.3px 2px #000;
 }
 
 .init button{
@@ -92,6 +93,7 @@ a:hover{
 .info form {
     display: flex;
     text-align: center;
+    align-items: center;
     font-family: sans-serif;
     gap: 10px;
 }
@@ -140,7 +142,7 @@ a:hover{
 
 .body-table td {
     margin-top: 20px;
-    border: 1px solid #000;
+    border: 1.5px solid #000;
 }
 
 
@@ -148,6 +150,7 @@ a:hover{
     border: none;
     background: rgb(255, 153, 0);
     color: #000;
+    font-weight: bold;
     padding: 5px 12px;
     border-radius: 4px;
     cursor: pointer;
@@ -192,27 +195,6 @@ a:hover{
 
 .invisible{
   display: none;
-}
-
-@media(max-width: 768px){
-    .info input{
-       width: 80%;
-    }
-
-    .table{
-       padding: 20px;
-       display: flex;
-       flex-direction: column;
-       gap: 20px;
-    }
-
-    .table th{
-        margin-left: 20px;
-    }
-
-    .table td{
-    padding: 8px;
-    }
 }
 
 /* Tema Dark */
@@ -266,4 +248,66 @@ body.dark button:hover{
 }
 .check{
     visibility: hidden;
+}
+
+
+@media(max-width: 768px){
+
+    .init h1{
+        font-size: 15px;
+    }
+
+    .body-table{
+        margin: 0;
+    }
+
+
+    .info form{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .Adiciona{
+        margin: 0 auto;
+    }
+
+    .button-delete{
+        margin-left: 3px;
+        margin-top: 10px;
+    }
+    .info input{
+       width: 100%;
+    }
+
+    .busca{
+        width: 50%;
+        padding: 3px;
+    }
+
+    .theme{
+
+        padding: 8px;
+         top: 60px;
+    }
+
+    .table{
+       margin: 0 auto;
+       padding: 20px;
+       display: flex;
+       flex-direction: column;
+       gap: 20px;
+    }
+
+    .table th{
+        margin-left: 20px;
+        gap: 20px;
+    }
+
+    .table td{
+        gap: 20px;
+        padding: 12px;
+    }
 }
