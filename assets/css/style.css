@@ -38,6 +38,14 @@ a:hover{
     background: rgb(255, 153, 0);
 }
 
+.init a{
+    padding: 10px;
+}
+
+
+.init a:hover{
+    color: #fff;
+}
 .busca{
     padding: 5px;
     border: none;
