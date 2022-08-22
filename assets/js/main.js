@@ -7,12 +7,13 @@ let botao = document.querySelector(".Adiciona");
 const alunos = JSON.parse(localStorage.getItem('Aluno')) || [];
 AdicionaAluno();
 
+
 function AdicionaAluno() {
   botao.addEventListener("click", (e) => {
     e.preventDefault();
     ValidaAluno();
     armazena();
-})
+  })
 }
 
 function criaTabela() {
@@ -49,31 +50,30 @@ function criaTabela() {
     tdNota.classList.add('nota-error')
   }
 
+
   tdButton.classList.add('button-delete')
   tdButton.addEventListener('click', (e) => {
     const confirma = confirm(' Voce realmente deseja remover este Aluno?')
 
-    if (confirma === true) {
-      localStorage.clear()
+    if (confirma) {
       table.remove();
     } else {
       return false;
     }
   })
-
   tdNome.addEventListener('dblclick', (e) => {
     let novoNome = prompt(' Insira o nome que voçê deseja alterar ');
     tdNome.textContent = novoNome;
   })
   const tb = document.querySelector(".body-table");
   tb.appendChild(table)
- 
+
 }
 
 function geraCodigoAluno(min, max) {
   const geraCodigo = Math.floor(Math.random() * (max - min) + min);
   return geraCodigo;
-  
+
 }
 
 function ValidaAluno() {
@@ -89,21 +89,19 @@ function ValidaAluno() {
   }
 }
 
-function armazena(){
+function armazena() {
 
   const armazena = {
     nome: nome.value,
     idade: Idade.value,
     nota: nota.value
   }
-  if(armazena === ' ' || armazena === undefined){
+  if (armazena === ' ' || armazena === undefined) {
     return false;
-  }else{
+  } else {
     alunos.push(armazena)
-    localStorage.setItem('Aluno' , JSON.stringify(alunos))
+    localStorage.setItem('Aluno', JSON.stringify(alunos))
   }
-
 }
-
 
 

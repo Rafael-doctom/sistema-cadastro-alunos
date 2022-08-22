@@ -9,8 +9,6 @@ function Busca() {
         let aluno = alunos[i]
         let tableNome = aluno.querySelector('.aluno-nome')
         let alunoNome = tableNome.textContent;
-        console.log(alunoNome)
-
         if (alunoNome !== busca.value) {
           aluno.classList.add('invisible')
         } else {
